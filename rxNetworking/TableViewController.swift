@@ -6,11 +6,24 @@
 //  Copyright © 2016 ronatory. All rights reserved.
 //
 
+import Moya
+import Moya_ModelMapper
 import UIKit
+import RxCocoa
+import RxSwift
 
 class TableViewController: UITableViewController {
 	
 	@IBOutlet weak var searchBar: UISearchBar!
+	
+	let disposeBag = DisposeBag()
+	var provider: RxMoyaProvider<GitHub>!
+	var latestRepositoryName: Observable<String> {
+		return searchBar
+			.rx_text
+			.throttle(0.5, scheduler: MainScheduler.instance)
+			.distinctUntilChanged()
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +31,19 @@ class TableViewController: UITableViewController {
     }
 
 	func setupRx() {
+		// 1. create a provider
+		provider = RxMoyaProvider<GitHub>()
 		
+		// here tell the table view, that if the user clicks on a cell
+		// and the keyboard is still visible, then hide it
+		tableView
+			.rx_itemSelected
+			.subscribeNext { indexPath in
+				if self.searchBar.isFirstResponder() == true {
+					self.view.endEditing(true)
+				}
+			}
+			.addDisposableTo(disposeBag)
 	}
 
     // MARK: - Table view data source

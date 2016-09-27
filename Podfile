@@ -7,9 +7,9 @@ target 'rxNetworking' do
 
 
   # Pods for rxNetworking
-  pod 'Moya/RxSwift'
+  pod 'Moya/RxSwift', '7.0.0'
   pod 'Moya-ModelMapper/RxSwift'
   pod 'RxCocoa'
-  pod 'RxOptional'
+  pod 'RxOptional', '~> 2.0'
 
 end

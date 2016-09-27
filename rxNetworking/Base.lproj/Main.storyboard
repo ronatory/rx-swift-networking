@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8f3-rB-jck">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,19 +28,16 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="hoO-cY-e7i" id="g7b-cm-rVa"/>
-                            <outlet property="delegate" destination="hoO-cY-e7i" id="HWh-wR-WzL"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="fpR-zy-ghU"/>
                     <connections>
                         <outlet property="searchBar" destination="Nmz-ha-Aif" id="zcN-VT-oqz"/>
+                        <outlet property="tableView" destination="Vfw-JY-OC3" id="sqa-IL-D6v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fi8-o5-lR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="437"/>
+            <point key="canvasLocation" x="545" y="411"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1vy-uY-ccN">

@@ -14,3 +14,5 @@ To install, download it or clone and then start `pod install` from the project d
 - Use [RxOptional](https://github.com/RxSwiftCommunity/RxOptional)
 
 ## Result
+
+![](https://media.giphy.com/media/l0HlW3PrcbrmnZI1a/giphy.gif)
